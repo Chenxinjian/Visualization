@@ -17,7 +17,7 @@
     body{height:100%;margin:0px;padding:0px}
     #container{height:100%}
   </style>
-  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=USH8Rom9kXEIymKD8onpSaguikuQy0zy">
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=q2tZwvXGI7YWKR60OS3SfiA8CEA5g4zG">
       //v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
   </script>
 
@@ -86,9 +86,11 @@
                         +"station name:"+points[i].station_name+"<br>"
                         +"lat&lng:"+points[i].lat+","+points[i].lng;
                     var stationID=points[i].station_id;
+                    var stationName=points[i].station_name;
                     var infoWindow = new BMap.InfoWindow(info);  // 创建信息窗口对象
                     marker.addEventListener("click", function() {   // 给站点增加点击事件
                         document.getElementById('idGet').value=stationID;
+                        document.getElementById('station_name').value=stationName;
                         this.openInfoWindow(infoWindow,point);  // 地图在 point 位置处打开信息窗口
                     });
                 })();
@@ -103,12 +105,13 @@
   <form name="dateInfo" action="/servlet/TimeNumServlet" target="echartsIFrame">
     <div class="context">
       <h3 style="text-align: center">The long-term bicycle circulation view</h3>
-      <div class="left">Station name:</div>
+      <div class="left">Station name:<input type="text" value="" readonly id="station_name"></div>
       <div class="center">select time periods:
-        <input type="date" value="2014-03-23" id="data0" name="data0" onblur="sub()">
+        <input type="date" value="2014-03-23" id="data0" name="data0">
         to
-        <input type="date" value="2014-03-23" id="data1" name="data1" onblur="sub()">
+        <input type="date" value="2014-03-23" id="data1" name="data1">
         <input type="hidden" id="idGet" name="idGet" value="">
+        <button type="button" onclick="sub()">提交</button>
       </div>
       <div class="right"></div>
     </div>

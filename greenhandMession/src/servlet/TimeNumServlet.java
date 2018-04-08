@@ -47,37 +47,42 @@ public class TimeNumServlet extends HttpServlet {
         Iterator itea = list.iterator();
         String str0 = new String();
         str0="";
-        System.out.println(str0);
+        //System.out.println(str0);
         str0="[";
-        System.out.println(str0);
+        //System.out.println(str0);
         while(itea.hasNext())
         {
             HashMap<String, String> timeNum_lease = (HashMap<String, String>) itea.next();
             str0=str0+timeNum_lease.get("LEASENUMBER")+",";
-            System.out.println(str0);
+            //System.out.println(str0);
         }
         str0=str0.substring(0,str0.length()-1);
         str0=str0+"]";
-        System.out.println(str0);
+        //System.out.println(str0);
 
         ArrayList<HashMap<String,String>> list1 =dao.getStationHoursInfo_ruturn(ub);
         Iterator itea1 = list1.iterator();
         String str1 = new String();
         str1="";
-        System.out.println(str1);
+        //System.out.println(str1);
         str1="[";
-        System.out.println(str1);
+        //System.out.println(str1);
         while(itea1.hasNext())
         {
             HashMap<String, String> timeNum_return = (HashMap<String, String>) itea1.next();
             str1=str1+timeNum_return.get("RETURNNUMBER")+",";
-            System.out.println(str1);
+            //System.out.println(str1);
         }
         str1=str1.substring(0,str1.length()-1);
         str1=str1+"]";
-        System.out.println(str1);
 
+        //System.out.println(str0);
+        //System.out.println(str1);
 
+        if(str0.equals("]")&&str1.equals("]"))
+        {
+            response.sendRedirect("../../demo.html");
+        }
 
         dao.getStationHoursInfo_ruturn(ub);
 
