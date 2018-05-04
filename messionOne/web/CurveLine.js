@@ -45,6 +45,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
       }
     });
 
+
     polyline.cornerPoints = points;
     polyline.editMarkers = []; //编辑功能的顶点
 
