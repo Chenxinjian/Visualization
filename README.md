@@ -1,7 +1,7 @@
 Visualization
 ===========
 visualize the data of Hangzhou's BSP
-use JS¡¢Javaweb¡¢d3.js¡¢Oracle...
+use JS & Javaweb & d3.js & Oracle...
 
 -------------------
 # greenhandMession
