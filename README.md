@@ -5,7 +5,7 @@ use JS & Javaweb & d3.js & Oracle...
 
 -------------------
 # greenhandMession
-you can choose the start date and the end data, page will show the flow of each station in between those dates.
+you can choose the start date and the end data, page will show the flow of each station between those dates.
 
 ![diagram of greenhandMession](https://github.com/ptmax/Visualization/blob/master/pics/m0.png)
 
